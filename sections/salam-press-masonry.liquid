@@ -1,0 +1,130 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+<section class="salam-press" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="salam-container">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="salam-eyebrow" style="color: rgba(255, 255, 255, 0.45);">{{ section.settings.eyebrow | escape }}</span>
+    {%- endif -%}
+
+    <div class="salam-press__grid" style="margin-top: 2.2rem;">
+      <article class="salam-press-primary">
+        {%- if section.settings.primary_image != blank -%}
+          {{ section.settings.primary_image | image_url: width: 1800 | image_tag: class: 'salam-press-primary__bg', loading: 'lazy', sizes: '(min-width: 990px) 66vw, 100vw' }}
+        {%- endif -%}
+
+        <div class="salam-press-primary__content">
+          <h3 class="salam-press-primary__quote">"{{ section.settings.primary_quote | escape }}"</h3>
+          <p class="salam-press-source">- {{ section.settings.primary_source | escape }}</p>
+        </div>
+      </article>
+
+      <div class="salam-press-secondary">
+        {%- for block in section.blocks -%}
+          <article class="salam-press-card" {{ block.shopify_attributes }}>
+            <p class="salam-press-card__quote">"{{ block.settings.quote | escape }}"</p>
+            <p class="salam-press-source">{{ block.settings.source | escape }}</p>
+          </article>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Press Masonry",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "As Featured In"
+    },
+    {
+      "type": "textarea",
+      "id": "primary_quote",
+      "label": "Primary quote",
+      "default": "The Smart Ring Built for the Muslim World"
+    },
+    {
+      "type": "text",
+      "id": "primary_source",
+      "label": "Primary source",
+      "default": "Gulf News"
+    },
+    {
+      "type": "image_picker",
+      "id": "primary_image",
+      "label": "Primary background image"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 105
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 105
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mention",
+      "name": "Mention",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "A breakthrough for Muslim wellness technology"
+        },
+        {
+          "type": "text",
+          "id": "source",
+          "label": "Source",
+          "default": "Arab News"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Press Masonry",
+      "blocks": [
+        {
+          "type": "mention",
+          "settings": {
+            "quote": "A breakthrough for Muslim wellness technology",
+            "source": "Arab News"
+          }
+        },
+        {
+          "type": "mention",
+          "settings": {
+            "quote": "Finally, a wearable designed with Muslim users in mind",
+            "source": "Muslim Pro"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

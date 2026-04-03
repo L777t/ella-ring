@@ -1,0 +1,160 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+<section class="salam-surface salam-balance" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="salam-container">
+    <div class="salam-balance__header">
+      <h2 class="salam-dual-world__title" style="margin: 0;">
+        {{ section.settings.heading_prefix | escape }}
+        <span class="salam-title-serif">{{ section.settings.heading_emphasis | escape }}</span>
+      </h2>
+      <p class="salam-subtitle" style="margin-top: 1.6rem;">{{ section.settings.description | escape }}</p>
+    </div>
+
+    <div class="salam-balance__grid">
+      <article class="salam-balance-card salam-balance-card--dark">
+        <h3 class="salam-balance-card__title">{{ section.settings.left_title | escape }}</h3>
+        <p class="salam-balance-card__body">{{ section.settings.left_body | escape }}</p>
+        <ul class="salam-balance-list">
+          {%- if section.settings.left_item_1 != blank -%}<li><span class="salam-check">+</span> {{ section.settings.left_item_1 | escape }}</li>{%- endif -%}
+          {%- if section.settings.left_item_2 != blank -%}<li><span class="salam-check">+</span> {{ section.settings.left_item_2 | escape }}</li>{%- endif -%}
+          {%- if section.settings.left_item_3 != blank -%}<li><span class="salam-check">+</span> {{ section.settings.left_item_3 | escape }}</li>{%- endif -%}
+        </ul>
+      </article>
+
+      <article class="salam-balance-card salam-balance-card--light">
+        <h3 class="salam-balance-card__title">{{ section.settings.right_title | escape }}</h3>
+        <p class="salam-balance-card__body">{{ section.settings.right_body | escape }}</p>
+        <ul class="salam-balance-list">
+          {%- if section.settings.right_item_1 != blank -%}<li><span class="salam-check">+</span> {{ section.settings.right_item_1 | escape }}</li>{%- endif -%}
+          {%- if section.settings.right_item_2 != blank -%}<li><span class="salam-check">+</span> {{ section.settings.right_item_2 | escape }}</li>{%- endif -%}
+          {%- if section.settings.right_item_3 != blank -%}<li><span class="salam-check">+</span> {{ section.settings.right_item_3 | escape }}</li>{%- endif -%}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Balance System",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading prefix",
+      "default": "Introducing the"
+    },
+    {
+      "type": "text",
+      "id": "heading_emphasis",
+      "label": "Heading emphasis",
+      "default": "Salam Balance System"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "The first AI framework that connects your spiritual rhythm with your biological rhythm."
+    },
+    {
+      "type": "header",
+      "content": "Left card"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left title",
+      "default": "Your Faith Rhythm"
+    },
+    {
+      "type": "textarea",
+      "id": "left_body",
+      "label": "Left body",
+      "default": "Salam learns your Dhikr patterns, prayer consistency, and spiritual streaks - then uses this data to surface personalized AI Zikr suggestions based on your day."
+    },
+    {
+      "type": "text",
+      "id": "left_item_1",
+      "label": "Left item 1",
+      "default": "Daily Dhikr Goal Tracking"
+    },
+    {
+      "type": "text",
+      "id": "left_item_2",
+      "label": "Left item 2",
+      "default": "AI Zikr Suggestions"
+    },
+    {
+      "type": "text",
+      "id": "left_item_3",
+      "label": "Left item 3",
+      "default": "Spiritual Readiness Score"
+    },
+    {
+      "type": "header",
+      "content": "Right card"
+    },
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right title",
+      "default": "Your Body Rhythm"
+    },
+    {
+      "type": "textarea",
+      "id": "right_body",
+      "label": "Right body",
+      "default": "Your body has its own rhythm - and Salam reads it every hour of every day, so you know when to push, when to rest, and when to turn inward."
+    },
+    {
+      "type": "text",
+      "id": "right_item_1",
+      "label": "Right item 1",
+      "default": "24/7 Heart Rate & HRV"
+    },
+    {
+      "type": "text",
+      "id": "right_item_2",
+      "label": "Right item 2",
+      "default": "Sleep Stage Analysis"
+    },
+    {
+      "type": "text",
+      "id": "right_item_3",
+      "label": "Right item 3",
+      "default": "Stress Score & Recovery"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Balance System"
+    }
+  ]
+}
+{% endschema %}
+

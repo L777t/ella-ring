@@ -1,0 +1,99 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="salam-promise"
+  style="
+    background: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="salam-container">
+    <div class="salam-promise__inner">
+      <blockquote class="salam-promise__quote">{{ section.settings.quote | newline_to_br }}</blockquote>
+      <div class="salam-promise__divider"></div>
+      <p class="salam-promise__body">{{ section.settings.body | newline_to_br }}</p>
+
+      {%- if section.settings.button_label != blank -%}
+        <a class="salam-promise__link" href="{{ section.settings.button_link | default: '#' }}">
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Promise",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote",
+      "default": "\"A healthy body is a form of gratitude.\nA remembered God is a form of peace.\""
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Salam Ring was built on one belief:\nyour faith and your wellness are not two separate journeys.\nThey are the same path - and we built a ring to walk it with you."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Our Story"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#f7f5f0"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 120
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Promise"
+    }
+  ]
+}
+{% endschema %}
+

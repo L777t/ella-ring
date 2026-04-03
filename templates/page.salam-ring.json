@@ -1,0 +1,364 @@
+﻿{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "horizontal_alignment": "start",
+        "vertical_alignment": "center",
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 36,
+        "padding-block-end": 36
+      }
+    },
+    "salam_promo_strip": {
+      "type": "salam-promo-strip",
+      "settings": {
+        "message": "Free worldwide shipping on all Salam Ring orders",
+        "link_label": "Ramadan Launch Offer: $20 off",
+        "link_url": "",
+        "show_left_icon": false,
+        "show_right_icon": true,
+        "icon_symbol": "->",
+        "background_color": "#1e1e1e",
+        "text_color": "#f7f5f0",
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
+    "salam_hero": {
+      "type": "salam-hero",
+      "settings": {
+        "eyebrow": "Introducing Salam Ring",
+        "title_line_1": "Still.",
+        "title_line_2": "Present.",
+        "title_emphasis": "Protected.",
+        "description": "The world's first smart ring built for the faithful mind and the healthy body.\nDhikr. Sleep. Heart. Peace. One ring.",
+        "primary_label": "Order Salam Ring",
+        "primary_link": "",
+        "secondary_label": "Watch the Story",
+        "secondary_link": "",
+        "hero_image": "",
+        "trust_title": "Trusted by 49,000+",
+        "trust_subtitle": "Muslims in 30+ countries",
+        "padding_top": 130,
+        "padding_bottom": 90
+      }
+    },
+    "salam_product_visual": {
+      "type": "salam-product-visual",
+      "blocks": {
+        "color_midnight": {
+          "type": "color",
+          "settings": {
+            "name": "Midnight",
+            "swatch_color": "#1e1e1e",
+            "is_default": true
+          }
+        },
+        "color_gold": {
+          "type": "color",
+          "settings": {
+            "name": "Desert Gold",
+            "swatch_color": "#d4af37",
+            "is_default": false
+          }
+        },
+        "color_silver": {
+          "type": "color",
+          "settings": {
+            "name": "Arctic Silver",
+            "swatch_color": "#e0e0e0",
+            "is_default": false
+          }
+        },
+        "feature_sleep": {
+          "type": "feature",
+          "settings": {
+            "icon_text": "(moon)",
+            "description": "Sleep Intelligence"
+          }
+        },
+        "feature_heart": {
+          "type": "feature",
+          "settings": {
+            "icon_text": "(heart)",
+            "description": "Heart & HRV"
+          }
+        },
+        "feature_dhikr": {
+          "type": "feature",
+          "settings": {
+            "icon_text": "(dhikr)",
+            "description": "Auto Dhikr"
+          }
+        },
+        "feature_battery": {
+          "type": "feature",
+          "settings": {
+            "icon_text": "(dot)",
+            "description": "30-Day Battery"
+          }
+        }
+      },
+      "block_order": [
+        "color_midnight",
+        "color_gold",
+        "color_silver",
+        "feature_sleep",
+        "feature_heart",
+        "feature_dhikr",
+        "feature_battery"
+      ],
+      "settings": {
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "salam_promise": {
+      "type": "salam-promise",
+      "settings": {
+        "quote": "\"A healthy body is a form of gratitude.\nA remembered God is a form of peace.\"",
+        "body": "Salam Ring was built on one belief:\nyour faith and your wellness are not two separate journeys.\nThey are the same path - and we built a ring to walk it with you.",
+        "button_label": "Our Story",
+        "button_link": "",
+        "background_color": "#1e1e1e",
+        "text_color": "#f7f5f0",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "salam_dual_cards": {
+      "type": "salam-dual-world-cards",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "world_type": "faith",
+            "icon_text": "(dhikr)",
+            "title": "Your Zikr, Remembered",
+            "body": "Salam detects the subtle motion of your finger and counts silently - so you never lose your place.",
+            "tag": "Up to 10,000 Zikr/session"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "world_type": "faith",
+            "icon_text": "(clock)",
+            "title": "Never Miss a Prayer",
+            "body": "Gentle vibrations guide you to each of the five daily prayers - wherever you are.",
+            "tag": "5 Daily Prayer Alerts"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "world_type": "faith",
+            "icon_text": "(moon)",
+            "title": "Inner Peace Insights",
+            "body": "Tracks stress through HRV and suggests the right moment for Dhikr, breathing, or rest.",
+            "tag": "Real-time Stress Intelligence"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "world_type": "wellness",
+            "icon_text": "(moon)",
+            "title": "Rest Is Worship",
+            "body": "Tracks deep sleep, REM cycles, and recovery - so you wake for Fajr truly restored.",
+            "tag": "Multi-stage Sleep Analysis"
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "world_type": "wellness",
+            "icon_text": "(heart)",
+            "title": "Honor Your Heart",
+            "body": "Continuous heart rate and HRV monitoring - clinical research precision, worn effortlessly.",
+            "tag": "98% Heart Rate Accuracy"
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "world_type": "wellness",
+            "icon_text": "(dot)",
+            "title": "Move with Intention",
+            "body": "Understands your effort, your recovery, and your readiness. Because how you move matters.",
+            "tag": "Activity & Recovery Score"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "heading_prefix": "One Ring.",
+        "heading_emphasis": "Two Worlds.",
+        "padding_top": 110,
+        "padding_bottom": 110
+      }
+    },
+    "salam_precision_tabs": {
+      "type": "salam-precision-tabs",
+      "blocks": {
+        "tab_1": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Fajr Morning",
+            "quote": "Your sleep score: 87. Recovery: Excellent. You're ready for the day - and for Fajr.",
+            "media_image": "",
+            "media_placeholder": "Fajr lifestyle visual",
+            "widget_title": "Sleep Score 87",
+            "widget_description": "Morning readiness"
+          }
+        },
+        "tab_2": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "At Work",
+            "quote": "Stress rising. Your HRV suggests a 5-minute Dhikr break. Salam already knows before you do.",
+            "media_image": "",
+            "media_placeholder": "Workday moment",
+            "widget_title": "Stress Alert",
+            "widget_description": "Dhikr break suggested"
+          }
+        },
+        "tab_3": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "During Workout",
+            "quote": "Heart rate: 142 bpm. Zone 3 cardio. 14 minutes to optimal fat burn.",
+            "media_image": "",
+            "media_placeholder": "Workout visual",
+            "widget_title": "HR 142 bpm",
+            "widget_description": "Zone 3 cardio"
+          }
+        },
+        "tab_4": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Before Sleep",
+            "quote": "Readiness score: 79. Wind down recommended. Tonight's sleep prediction: 7h 23m.",
+            "media_image": "",
+            "media_placeholder": "Night wind-down",
+            "widget_title": "Readiness 79",
+            "widget_description": "Sleep prediction 7h 23m"
+          }
+        },
+        "tab_5": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "In Prayer",
+            "quote": "Zikr session: 33 x Subhanallah detected. Completed silently. Undisturbed.",
+            "media_image": "",
+            "media_placeholder": "Prayer moment",
+            "widget_title": "Zikr Count 33",
+            "widget_description": "Silent prayer mode"
+          }
+        }
+      },
+      "block_order": [
+        "tab_1",
+        "tab_2",
+        "tab_3",
+        "tab_4",
+        "tab_5"
+      ],
+      "settings": {
+        "eyebrow": "The Science Behind Salam",
+        "title_line_1": "Extreme precision.",
+        "title_emphasis": "Faithfully designed.",
+        "description": "Salam Ring rests on your finger - the body's richest source of blood flow data - capturing over 20 biometric signals with clinical accuracy, day and night.",
+        "padding_top": 110,
+        "padding_bottom": 110
+      }
+    },
+    "salam_balance_system": {
+      "type": "salam-balance-system",
+      "settings": {
+        "heading_prefix": "Introducing the",
+        "heading_emphasis": "Salam Balance System",
+        "description": "The first AI framework that connects your spiritual rhythm with your biological rhythm.",
+        "left_title": "Your Faith Rhythm",
+        "left_body": "Salam learns your Dhikr patterns, prayer consistency, and spiritual streaks - then uses this data to surface personalized AI Zikr suggestions based on your day.",
+        "left_item_1": "Daily Dhikr Goal Tracking",
+        "left_item_2": "AI Zikr Suggestions",
+        "left_item_3": "Spiritual Readiness Score",
+        "right_title": "Your Body Rhythm",
+        "right_body": "Your body has its own rhythm - and Salam reads it every hour of every day, so you know when to push, when to rest, and when to turn inward.",
+        "right_item_1": "24/7 Heart Rate & HRV",
+        "right_item_2": "Sleep Stage Analysis",
+        "right_item_3": "Stress Score & Recovery",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "salam_press": {
+      "type": "salam-press-masonry",
+      "blocks": {
+        "mention_1": {
+          "type": "mention",
+          "settings": {
+            "quote": "A breakthrough for Muslim wellness technology",
+            "source": "Arab News"
+          }
+        },
+        "mention_2": {
+          "type": "mention",
+          "settings": {
+            "quote": "Finally, a wearable designed with Muslim users in mind",
+            "source": "Muslim Pro"
+          }
+        }
+      },
+      "block_order": [
+        "mention_1",
+        "mention_2"
+      ],
+      "settings": {
+        "eyebrow": "As Featured In",
+        "primary_quote": "The Smart Ring Built for the Muslim World",
+        "primary_source": "Gulf News",
+        "primary_image": "",
+        "padding_top": 105,
+        "padding_bottom": 105
+      }
+    },
+    "salam_final_cta": {
+      "type": "salam-final-cta",
+      "settings": {
+        "eyebrow": "Begin Your Journey",
+        "title": "The ring that remembers with you.",
+        "subtitle": "Free shipping  -  30-day return  -  No subscription",
+        "button_label": "Order Salam Ring - $159",
+        "button_link": "",
+        "bottom_quote": "Designed to outlast trends.\nBuilt to outlast doubts.",
+        "padding_top": 130,
+        "padding_bottom": 120
+      }
+    }
+  },
+  "order": [
+    "main",
+    "salam_promo_strip",
+    "salam_hero",
+    "salam_product_visual",
+    "salam_promise",
+    "salam_dual_cards",
+    "salam_precision_tabs",
+    "salam_balance_system",
+    "salam_press",
+    "salam_final_cta"
+  ]
+}
+

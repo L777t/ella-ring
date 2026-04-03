@@ -1,0 +1,184 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+<section class="salam-surface salam-dual-world" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="salam-container">
+    <h2 class="salam-dual-world__title">
+      {{ section.settings.heading_prefix | escape }}
+      <span class="salam-title-serif">{{ section.settings.heading_emphasis | escape }}</span>
+    </h2>
+
+    <div class="salam-dual-world__track salam-hide-scrollbar">
+      {%- for block in section.blocks -%}
+        <article class="salam-dual-card" {{ block.shopify_attributes }}>
+          <span class="salam-pill">{{ block.settings.world_type | escape }}</span>
+          <span class="salam-dual-card__icon">{{ block.settings.icon_text }}</span>
+          <h3 class="salam-dual-card__title">{{ block.settings.title | escape }}</h3>
+          <p class="salam-dual-card__body">{{ block.settings.body | escape }}</p>
+          <p class="salam-dual-card__tag">{{ block.settings.tag | escape }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Dual Cards",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading prefix",
+      "default": "One Ring."
+    },
+    {
+      "type": "text",
+      "id": "heading_emphasis",
+      "label": "Heading emphasis",
+      "default": "Two Worlds."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 110
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 110
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "world_type",
+          "label": "Type",
+          "options": [
+            {
+              "value": "faith",
+              "label": "faith"
+            },
+            {
+              "value": "wellness",
+              "label": "wellness"
+            }
+          ],
+          "default": "faith"
+        },
+        {
+          "type": "text",
+          "id": "icon_text",
+          "label": "Icon text",
+          "default": "(dhikr)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Your Zikr, Remembered"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body",
+          "default": "Salam detects the subtle motion of your finger and counts silently - so you never lose your place."
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Up to 10,000 Zikr/session"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Dual Cards",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "world_type": "faith",
+            "icon_text": "(dhikr)",
+            "title": "Your Zikr, Remembered",
+            "body": "Salam detects the subtle motion of your finger and counts silently - so you never lose your place.",
+            "tag": "Up to 10,000 Zikr/session"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "world_type": "faith",
+            "icon_text": "(clock)",
+            "title": "Never Miss a Prayer",
+            "body": "Gentle vibrations guide you to each of the five daily prayers - wherever you are.",
+            "tag": "5 Daily Prayer Alerts"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "world_type": "faith",
+            "icon_text": "(moon)",
+            "title": "Inner Peace Insights",
+            "body": "Tracks stress through HRV and suggests the right moment for Dhikr, breathing, or rest.",
+            "tag": "Real-time Stress Intelligence"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "world_type": "wellness",
+            "icon_text": "(moon)",
+            "title": "Rest Is Worship",
+            "body": "Tracks deep sleep, REM cycles, and recovery - so you wake for Fajr truly restored.",
+            "tag": "Multi-stage Sleep Analysis"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "world_type": "wellness",
+            "icon_text": "(heart)",
+            "title": "Honor Your Heart",
+            "body": "Continuous heart rate and HRV monitoring - clinical research precision, worn effortlessly.",
+            "tag": "98% Heart Rate Accuracy"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "world_type": "wellness",
+            "icon_text": "(dot)",
+            "title": "Move with Intention",
+            "body": "Understands your effort, your recovery, and your readiness. Because how you move matters.",
+            "tag": "Activity & Recovery Score"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

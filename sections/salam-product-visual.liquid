@@ -1,0 +1,179 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+{%- assign has_default_color = false -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'color' and block.settings.is_default -%}
+    {%- assign has_default_color = true -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<section class="salam-surface salam-product-visual" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="salam-container salam-product-visual__layout">
+    <div class="salam-color-swatches">
+      {%- assign color_index = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'color' -%}
+          {%- assign color_index = color_index | plus: 1 -%}
+          {%- assign is_active = false -%}
+          {%- if has_default_color and block.settings.is_default -%}
+            {%- assign is_active = true -%}
+          {%- elsif has_default_color == false and color_index == 1 -%}
+            {%- assign is_active = true -%}
+          {%- endif -%}
+
+          <div class="salam-color-swatch{% if is_active %} is-active{% endif %}" {{ block.shopify_attributes }}>
+            <div class="salam-color-swatch__dot" style="background: {{ block.settings.swatch_color }};"></div>
+            <span class="salam-color-swatch__name">{{ block.settings.name | escape }}</span>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="salam-feature-list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'feature' -%}
+          <div class="salam-feature-item" {{ block.shopify_attributes }}>
+            <span class="salam-feature-item__icon">{{ block.settings.icon_text }}</span>
+            <span>{{ block.settings.description | escape }}</span>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Product Visual",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 20,
+      "max": 180,
+      "step": 5,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 20,
+      "max": 180,
+      "step": 5,
+      "unit": "px",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "color",
+      "name": "Color swatch",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Midnight"
+        },
+        {
+          "type": "color",
+          "id": "swatch_color",
+          "label": "Swatch color",
+          "default": "#1e1e1e"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_default",
+          "label": "Default active",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon_text",
+          "label": "Icon text",
+          "default": "(moon)"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Sleep Intelligence"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Product Visual",
+      "blocks": [
+        {
+          "type": "color",
+          "settings": {
+            "name": "Midnight",
+            "swatch_color": "#1e1e1e",
+            "is_default": true
+          }
+        },
+        {
+          "type": "color",
+          "settings": {
+            "name": "Desert Gold",
+            "swatch_color": "#d4af37"
+          }
+        },
+        {
+          "type": "color",
+          "settings": {
+            "name": "Arctic Silver",
+            "swatch_color": "#e0e0e0"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon_text": "(moon)",
+            "description": "Sleep Intelligence"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon_text": "(heart)",
+            "description": "Heart & HRV"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon_text": "(dhikr)",
+            "description": "Auto Dhikr"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon_text": "(dot)",
+            "description": "30-Day Battery"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

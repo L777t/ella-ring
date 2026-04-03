@@ -1,0 +1,213 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+<section class="salam-precision" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="salam-container">
+    <div class="salam-precision__intro">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="salam-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      {%- endif -%}
+      <h2 class="salam-title-display" style="margin-top: 1.4rem; font-size: clamp(3.4rem, 6vw, 6.3rem); color: #f7f5f0;">
+        {{ section.settings.title_line_1 | escape }}<br>
+        <span class="salam-title-serif">{{ section.settings.title_emphasis | escape }}</span>
+      </h2>
+      {%- if section.settings.description != blank -%}
+        <p class="salam-subtitle" style="margin-top: 1.8rem;">{{ section.settings.description | newline_to_br }}</p>
+      {%- endif -%}
+    </div>
+
+    <tabs-component class="salam-tabs">
+      <div class="salam-tabs-nav salam-hide-scrollbar">
+        {%- for block in section.blocks -%}
+          <a
+            href="#salam-precision-{{ section.id }}-{{ forloop.index }}"
+            class="tabs-component-panel-trigger link salam-tab-trigger{% if forloop.first %} --active{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.tab_label | escape }}
+          </a>
+        {%- endfor -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        <div id="salam-precision-{{ section.id }}-{{ forloop.index }}" class="tabs-component-content salam-tabs-panel{% if forloop.first %} --active salam-fade-up{% endif %}">
+          <div class="salam-tabs-panel__layout">
+            <div class="salam-tabs-panel__media">
+              {%- if block.settings.media_image != blank -%}
+                {{ block.settings.media_image | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 58vw, 100vw' }}
+              {%- else -%}
+                <div class="salam-tabs-panel__media-empty">{{ block.settings.media_placeholder | escape }}</div>
+              {%- endif -%}
+
+              <div class="salam-tabs-panel__quote">
+                <p>"{{ block.settings.quote | escape }}"</p>
+              </div>
+            </div>
+
+            <div class="salam-tabs-panel__app">
+              <div class="salam-tabs-phone">
+                <div>
+                  <p class="salam-tabs-phone__title">{{ block.settings.widget_title | escape }}</p>
+                  <p class="salam-tabs-phone__desc">{{ block.settings.widget_description | escape }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </tabs-component>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Precision Tabs",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Science Behind Salam"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title line 1",
+      "default": "Extreme precision."
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Title emphasis",
+      "default": "Faithfully designed."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Salam Ring rests on your finger - the body's richest source of blood flow data - capturing over 20 biometric signals with clinical accuracy, day and night."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 110
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 110
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Scenario Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab label",
+          "default": "Fajr Morning"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Your sleep score: 87. Recovery: Excellent. You're ready for the day - and for Fajr."
+        },
+        {
+          "type": "image_picker",
+          "id": "media_image",
+          "label": "Left media image"
+        },
+        {
+          "type": "text",
+          "id": "media_placeholder",
+          "label": "Media placeholder text",
+          "default": "Lifestyle visual"
+        },
+        {
+          "type": "text",
+          "id": "widget_title",
+          "label": "Widget title",
+          "default": "Sleep Score 87"
+        },
+        {
+          "type": "text",
+          "id": "widget_description",
+          "label": "Widget description",
+          "default": "App insight preview"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Precision Tabs",
+      "blocks": [
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Fajr Morning",
+            "quote": "Your sleep score: 87. Recovery: Excellent. You're ready for the day - and for Fajr.",
+            "widget_title": "Sleep Score 87",
+            "widget_description": "Morning readiness"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "At Work",
+            "quote": "Stress rising. Your HRV suggests a 5-minute Dhikr break. Salam already knows before you do.",
+            "widget_title": "Stress Alert",
+            "widget_description": "Dhikr break suggested"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "During Workout",
+            "quote": "Heart rate: 142 bpm. Zone 3 cardio. 14 minutes to optimal fat burn.",
+            "widget_title": "HR 142 bpm",
+            "widget_description": "Zone 3 cardio"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Before Sleep",
+            "quote": "Readiness score: 79. Wind down recommended. Tonight's sleep prediction: 7h 23m.",
+            "widget_title": "Readiness 79",
+            "widget_description": "Sleep prediction 7h 23m"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "In Prayer",
+            "quote": "Zikr session: 33 x Subhanallah detected. Completed silently. Undisturbed.",
+            "widget_title": "Zikr Count 33",
+            "widget_description": "Silent prayer mode"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

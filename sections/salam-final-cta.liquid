@@ -1,0 +1,99 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+<section class="salam-surface salam-final-cta" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="salam-container salam-final-cta__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="salam-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+    {%- endif -%}
+
+    <h2 class="salam-final-cta__title" style="margin-top: 1.4rem;">{{ section.settings.title | escape }}</h2>
+
+    {%- if section.settings.subtitle != blank -%}
+      <p class="salam-final-cta__sub">{{ section.settings.subtitle | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <a class="salam-btn-dark" style="margin-top: 2.8rem;" href="{{ section.settings.button_link | default: '#' }}">
+        {{ section.settings.button_label | escape }}
+      </a>
+    {%- endif -%}
+
+    {%- if section.settings.bottom_quote != blank -%}
+      <p class="salam-final-cta__quote">{{ section.settings.bottom_quote | newline_to_br }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Final CTA",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Begin Your Journey"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The ring that remembers with you."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Free shipping  -  30-day return  -  No subscription"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Order Salam Ring - $159"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_quote",
+      "label": "Bottom quote",
+      "default": "Designed to outlast trends.\nBuilt to outlast doubts."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 240,
+      "step": 5,
+      "unit": "px",
+      "default": 130
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 40,
+      "max": 240,
+      "step": 5,
+      "unit": "px",
+      "default": 120
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Final CTA"
+    }
+  ]
+}
+{% endschema %}
+

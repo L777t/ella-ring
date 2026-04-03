@@ -1,0 +1,819 @@
+﻿/* Salam landing shared styles */
+.salam-surface {
+  --salam-bg: #f7f5f0;
+  --salam-bg-soft: #efece5;
+  --salam-ink: #1e1e1e;
+  --salam-ink-muted: rgba(30, 30, 30, 0.65);
+  --salam-dark: #1e1e1e;
+  --salam-cream: #f7f5f0;
+  --salam-gold: #d4af37;
+  background: var(--salam-bg);
+  color: var(--salam-ink);
+}
+
+.salam-container {
+  width: min(1220px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+.salam-eyebrow {
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  font-weight: 600;
+}
+
+.salam-title-display {
+  font-size: clamp(3.8rem, 8vw, 8rem);
+  line-height: 1.03;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.salam-title-serif {
+  font-family: var(--font-heading--family);
+  font-style: italic;
+}
+
+.salam-subtitle {
+  font-size: clamp(1.6rem, 2.2vw, 1.95rem);
+  line-height: 1.65;
+  color: var(--salam-ink-muted);
+  margin: 0;
+}
+
+.salam-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--salam-dark);
+  color: #fff;
+  padding: 1.25rem 2.6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid var(--salam-dark);
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.salam-btn-dark:hover {
+  background: #333;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.salam-btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--salam-ink);
+  text-decoration: none;
+}
+
+.salam-btn-link:hover {
+  opacity: 0.66;
+}
+
+.salam-fade-up {
+  animation: salam-fade-up 0.45s ease both;
+}
+
+@keyframes salam-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.salam-hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.salam-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.salam-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.95rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Promo strip */
+.salam-promo-strip {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.salam-promo-strip__inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.salam-promo-strip__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Hero */
+.salam-hero {
+  padding: 9rem 0 7rem;
+}
+
+.salam-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.salam-hero__content {
+  display: grid;
+  gap: 2.2rem;
+  align-content: center;
+}
+
+.salam-hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+.salam-hero__media {
+  position: relative;
+  min-height: 54rem;
+  background: var(--salam-bg-soft);
+  border-radius: 0 0 0 4rem;
+  overflow: hidden;
+}
+
+.salam-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.salam-hero__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(30, 30, 30, 0.4);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.salam-hero__trust {
+  position: absolute;
+  right: 2.4rem;
+  bottom: 2.4rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(8px);
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);
+  max-width: 31rem;
+}
+
+.salam-hero__trust-title {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.salam-hero__trust-subtitle {
+  margin: 0.45rem 0 0;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* Product visual */
+.salam-product-visual {
+  border-top: 1px solid rgba(30, 30, 30, 0.08);
+  border-bottom: 1px solid rgba(30, 30, 30, 0.08);
+  padding: 7rem 0;
+}
+
+.salam-product-visual__layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.salam-color-swatches {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.salam-color-swatch {
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+  opacity: 0.42;
+}
+
+.salam-color-swatch.is-active {
+  opacity: 1;
+}
+
+.salam-color-swatch__dot {
+  width: 6.2rem;
+  height: 6.2rem;
+  border-radius: 999px;
+  border: 4px solid #fff;
+  box-shadow: 0 0.5rem 1.8rem rgba(0, 0, 0, 0.08);
+}
+
+.salam-color-swatch__name {
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.salam-feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.2rem 2rem;
+  color: rgba(30, 30, 30, 0.72);
+  font-size: 1.35rem;
+}
+
+.salam-feature-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.salam-feature-item__icon {
+  width: 1.8rem;
+  text-align: center;
+}
+
+/* Promise */
+.salam-promise {
+  background: var(--salam-dark);
+  color: var(--salam-cream);
+  padding: 12rem 0;
+}
+
+.salam-promise__inner {
+  max-width: 82rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.salam-promise__quote {
+  margin: 0;
+  font-size: clamp(3.1rem, 5vw, 5.2rem);
+  line-height: 1.35;
+  font-weight: 300;
+  font-style: italic;
+  font-family: var(--font-heading--family);
+}
+
+.salam-promise__divider {
+  width: 1px;
+  height: 6.8rem;
+  background: rgba(247, 245, 240, 0.24);
+  margin: 3.6rem auto;
+}
+
+.salam-promise__body {
+  margin: 0 auto;
+  max-width: 66rem;
+  color: rgba(247, 245, 240, 0.75);
+  font-size: 1.85rem;
+  line-height: 1.8;
+}
+
+.salam-promise__link {
+  margin-top: 2.8rem;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247, 245, 240, 0.35);
+  padding-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.salam-promise__link:hover {
+  border-bottom-color: #fff;
+}
+
+/* Dual cards */
+.salam-dual-world {
+  padding: 11rem 0;
+}
+
+.salam-dual-world__title {
+  margin: 0 0 4.2rem;
+  font-size: clamp(3.5rem, 6vw, 5.4rem);
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.salam-dual-world__track {
+  display: flex;
+  gap: 1.8rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.salam-dual-card {
+  flex: 0 0 min(38rem, 85vw);
+  border-radius: 2.6rem;
+  background: #fff;
+  border: 1px solid rgba(30, 30, 30, 0.08);
+  box-shadow: 0 0.5rem 2.8rem rgba(0, 0, 0, 0.04);
+  padding: 3rem;
+  min-height: 46rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.salam-dual-card__icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 999px;
+  background: var(--salam-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.salam-dual-card__title {
+  margin: 0;
+  font-size: 2.55rem;
+  line-height: 1.2;
+  font-family: var(--font-heading--family);
+}
+
+.salam-dual-card__body {
+  margin: 0;
+  font-size: 1.55rem;
+  line-height: 1.75;
+  color: rgba(30, 30, 30, 0.7);
+  flex: 1;
+}
+
+.salam-dual-card__tag {
+  border-top: 1px solid rgba(30, 30, 30, 0.12);
+  padding-top: 1.8rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.68;
+  font-weight: 600;
+}
+
+/* Precision tabs */
+.salam-precision {
+  background: var(--salam-dark);
+  color: var(--salam-cream);
+  padding: 11rem 0;
+}
+
+.salam-precision__intro {
+  max-width: 72rem;
+  margin-bottom: 5rem;
+}
+
+.salam-precision__intro .salam-subtitle {
+  color: rgba(247, 245, 240, 0.72);
+}
+
+.salam-tabs-nav {
+  display: flex;
+  gap: 2.1rem;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(247, 245, 240, 0.14);
+  padding-bottom: 1.4rem;
+  margin-bottom: 2.6rem;
+}
+
+.salam-tab-trigger {
+  text-decoration: none;
+  color: rgba(247, 245, 240, 0.55);
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.salam-tab-trigger.--active {
+  color: #fff;
+  font-weight: 500;
+}
+
+.salam-tab-trigger.--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1.6rem;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+}
+
+.salam-tabs-panel {
+  background: #2a2a2a;
+  border-radius: 2.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.salam-tabs-panel__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  min-height: 50rem;
+}
+
+.salam-tabs-panel__media {
+  background: #343434;
+  position: relative;
+}
+
+.salam-tabs-panel__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.salam-tabs-panel__media-empty {
+  min-height: 34rem;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.salam-tabs-panel__quote {
+  position: absolute;
+  left: 2.4rem;
+  right: 2.4rem;
+  bottom: 2.4rem;
+  background: rgba(0, 0, 0, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 1.6rem;
+  padding: 1.8rem;
+  backdrop-filter: blur(8px);
+}
+
+.salam-tabs-panel__quote p {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.salam-tabs-panel__app {
+  background: #1a1a1a;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  place-items: center;
+  padding: 2.8rem;
+}
+
+.salam-tabs-phone {
+  width: min(22rem, 70vw);
+  aspect-ratio: 1 / 2;
+  border-radius: 3rem;
+  border: 4px solid #333;
+  background: #000;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.42);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1.8rem;
+}
+
+.salam-tabs-phone__title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.salam-tabs-phone__desc {
+  margin: 0.7rem 0 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 1.2rem;
+}
+
+/* Balance */
+.salam-balance {
+  padding: 10rem 0;
+}
+
+.salam-balance__header {
+  text-align: center;
+  max-width: 72rem;
+  margin: 0 auto 4.8rem;
+}
+
+.salam-balance__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+.salam-balance-card {
+  border-radius: 2.4rem;
+  padding: 3.6rem;
+}
+
+.salam-balance-card--dark {
+  background: #0a2518;
+  color: #f7f5f0;
+}
+
+.salam-balance-card--light {
+  background: #fff;
+  border: 1px solid rgba(30, 30, 30, 0.08);
+  box-shadow: 0 0.6rem 2.8rem rgba(0, 0, 0, 0.04);
+}
+
+.salam-balance-card__title {
+  margin: 0;
+  font-size: clamp(3rem, 4vw, 3.7rem);
+  line-height: 1.2;
+  font-family: var(--font-heading--family);
+}
+
+.salam-balance-card__body {
+  margin: 1.9rem 0 0;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.salam-balance-card--light .salam-balance-card__body {
+  color: rgba(30, 30, 30, 0.72);
+}
+
+.salam-balance-list {
+  margin: 2.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.salam-balance-list li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.salam-balance-list .salam-check {
+  color: var(--salam-gold);
+  font-weight: 700;
+}
+
+.salam-balance-card--light .salam-balance-list .salam-check {
+  color: rgba(30, 30, 30, 0.45);
+}
+
+/* Press masonry */
+.salam-press {
+  background: #000;
+  color: #fff;
+  padding: 10.5rem 0;
+}
+
+.salam-press__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1.8rem;
+}
+
+.salam-press-primary {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 2.4rem;
+  min-height: 48rem;
+  display: flex;
+  align-items: flex-end;
+  padding: 3.4rem;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.salam-press-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.salam-press-primary__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.5s ease;
+}
+
+.salam-press-primary:hover .salam-press-primary__bg {
+  transform: scale(1.07);
+}
+
+.salam-press-primary__content {
+  position: relative;
+  z-index: 2;
+  max-width: 58rem;
+}
+
+.salam-press-primary__quote {
+  margin: 0;
+  font-size: clamp(2.9rem, 4.4vw, 5rem);
+  line-height: 1.2;
+  font-family: var(--font-heading--family);
+  font-weight: 300;
+}
+
+.salam-press-source {
+  margin: 2rem 0 0;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 600;
+}
+
+.salam-press-secondary {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.salam-press-card {
+  border-radius: 2.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #1a1a1a;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.salam-press-card__quote {
+  margin: 0;
+  font-size: 1.95rem;
+  line-height: 1.55;
+}
+
+/* Final CTA */
+.salam-final-cta {
+  padding: 12rem 0 11rem;
+  text-align: center;
+}
+
+.salam-final-cta__inner {
+  max-width: 68rem;
+  margin-inline: auto;
+}
+
+.salam-final-cta__title {
+  margin: 0;
+  font-size: clamp(3.4rem, 6vw, 6.2rem);
+  line-height: 1.18;
+  font-weight: 300;
+  font-family: var(--font-heading--family);
+}
+
+.salam-final-cta__sub {
+  margin: 1.8rem 0 0;
+  color: rgba(30, 30, 30, 0.62);
+  font-size: 1.6rem;
+}
+
+.salam-final-cta__quote {
+  margin-top: 4.6rem;
+  color: rgba(30, 30, 30, 0.5);
+  font-size: 1.45rem;
+  font-style: italic;
+  line-height: 1.7;
+  font-family: var(--font-heading--family);
+}
+
+@media (max-width: 989px) {
+  .salam-container {
+    width: min(1220px, 100% - 2.2rem);
+  }
+
+  .salam-hero {
+    padding-top: 7rem;
+  }
+
+  .salam-hero__layout,
+  .salam-tabs-panel__layout,
+  .salam-balance__grid,
+  .salam-press__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .salam-hero__media {
+    min-height: 42rem;
+    order: -1;
+    border-radius: 2.4rem;
+  }
+
+  .salam-feature-list {
+    justify-content: flex-start;
+  }
+
+  .salam-tabs-panel__app {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .salam-press-primary {
+    min-height: 40rem;
+  }
+}
+
+@media (max-width: 749px) {
+  .salam-title-display {
+    font-size: clamp(3.5rem, 14vw, 6rem);
+  }
+
+  .salam-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .salam-btn-dark,
+  .salam-btn-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .salam-promise,
+  .salam-precision,
+  .salam-dual-world,
+  .salam-final-cta,
+  .salam-press,
+  .salam-balance {
+    padding-block: 8rem;
+  }
+
+  .salam-promise__quote {
+    font-size: 3.2rem;
+  }
+
+  .salam-balance-card,
+  .salam-press-card,
+  .salam-press-primary {
+    padding: 2.2rem;
+  }
+
+  .salam-press-primary {
+    min-height: 34rem;
+  }
+}

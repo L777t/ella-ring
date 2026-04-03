@@ -1,0 +1,157 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+<section class="salam-surface salam-hero" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="salam-container salam-hero__layout">
+    <div class="salam-hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="salam-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      {%- endif -%}
+
+      <h1 class="salam-title-display">
+        {{ section.settings.title_line_1 | escape }}<br>
+        {{ section.settings.title_line_2 | escape }}<br>
+        <span class="salam-title-serif">{{ section.settings.title_emphasis | escape }}</span>
+      </h1>
+
+      {%- if section.settings.description != blank -%}
+        <p class="salam-subtitle">{{ section.settings.description | newline_to_br }}</p>
+      {%- endif -%}
+
+      <div class="salam-hero__actions">
+        {%- if section.settings.primary_label != blank -%}
+          <a class="salam-btn-dark" href="{{ section.settings.primary_link | default: '#' }}">
+            {{ section.settings.primary_label | escape }}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.secondary_label != blank -%}
+          <a class="salam-btn-link" href="{{ section.settings.secondary_link | default: '#' }}">
+            {{ section.settings.secondary_label | escape }}
+            <span aria-hidden="true">></span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="salam-hero__media">
+      {%- if section.settings.hero_image != blank -%}
+        {{ section.settings.hero_image | image_url: width: 1800 | image_tag: class: 'salam-hero__image', loading: 'lazy', sizes: '(min-width: 990px) 58vw, 100vw' }}
+      {%- else -%}
+        <div class="salam-hero__placeholder">Hero Product Image</div>
+      {%- endif -%}
+
+      <div class="salam-hero__trust">
+        <p class="salam-hero__trust-title">{{ section.settings.trust_title | escape }}</p>
+        <p class="salam-hero__trust-subtitle">{{ section.settings.trust_subtitle | escape }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Introducing Salam Ring"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title line 1",
+      "default": "Still."
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title line 2",
+      "default": "Present."
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Title emphasis",
+      "default": "Protected."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "The world's first smart ring built for the faithful mind and the healthy body.\nDhikr. Sleep. Heart. Peace. One ring."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary CTA label",
+      "default": "Order Salam Ring"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary CTA link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary CTA label",
+      "default": "Watch the Story"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary CTA link"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "trust_title",
+      "label": "Trust badge title",
+      "default": "Trusted by 49,000+"
+    },
+    {
+      "type": "text",
+      "id": "trust_subtitle",
+      "label": "Trust badge subtitle",
+      "default": "Muslims in 30+ countries"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 220,
+      "step": 5,
+      "unit": "px",
+      "default": 130
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 20,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 90
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Hero"
+    }
+  ]
+}
+{% endschema %}
+

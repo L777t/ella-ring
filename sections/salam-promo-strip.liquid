@@ -1,0 +1,112 @@
+﻿{{ 'section-salam-landing.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="salam-surface salam-promo-strip"
+  style="
+    background: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="salam-container">
+    <div class="salam-promo-strip__inner">
+      {%- if section.settings.show_left_icon -%}
+        <span aria-hidden="true">{{ section.settings.icon_symbol }}</span>
+      {%- endif -%}
+      <span>{{ section.settings.message | escape }}</span>
+      {%- if section.settings.link_label != blank and section.settings.link_url != blank -%}
+        <a class="salam-promo-strip__link" href="{{ section.settings.link_url }}">{{ section.settings.link_label | escape }}</a>
+      {%- endif -%}
+      {%- if section.settings.show_right_icon -%}
+        <span aria-hidden="true">{{ section.settings.icon_symbol }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Salam Promo Strip",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.popup", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "message",
+      "label": "Message",
+      "default": "Free worldwide shipping on all Salam Ring orders"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Ramadan Launch Offer: $20 off"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_left_icon",
+      "label": "Show left icon",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_right_icon",
+      "label": "Show right icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "icon_symbol",
+      "label": "Icon symbol",
+      "default": "->"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#f7f5f0"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salam Promo Strip"
+    }
+  ]
+}
+{% endschema %}
+
