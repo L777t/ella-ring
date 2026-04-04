@@ -1,0 +1,35 @@
+{%- liquid
+  assign settings = block.settings
+  assign body_html = settings.body_text
+  if body_html == blank
+    assign body_html = settings.body
+  endif
+  if body_html == blank
+    assign body_html = settings.text
+  endif
+  if body_html == blank
+    assign body_html = settings.description
+  endif
+  if body_html == blank
+    assign body_html = settings.desc
+  endif
+  if body_html == blank
+    assign body_html = settings.content
+  endif
+  if body_html == blank
+    assign body_html = settings.icon_description
+  endif
+  if body_html == blank
+    assign body_html = settings.subtitle
+  endif
+  if body_html == blank
+    assign body_html = settings.icon_subtitle
+  endif
+  assign body_color = settings.body_color | default: settings.text_color | default: settings.description_color | default: settings.desc_color | default: settings.icon_text_color | default: settings.icon_subtitle_color | default: '#444444'
+  assign body_size = settings.body_size | default: settings.text_size | default: settings.description_size | default: settings.desc_font_size | default: settings.icon_text_size | default: 16
+-%}
+{%- if body_html != blank -%}
+  <div class="blocky-body-text" style="color: {{ body_color }}; font-size: {{ body_size }}px; line-height: 1.6;">
+    {{ body_html }}
+  </div>
+{%- endif -%}

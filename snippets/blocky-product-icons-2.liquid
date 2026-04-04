@@ -1,0 +1,43 @@
+{%- liquid
+  assign settings = block.settings
+  assign icon_color = settings.icon_color | default: '#111111'
+  assign heading_color = settings.icon_heading_color | default: '#111111'
+  assign description_color = settings.icon_text_color | default: '#444444'
+  assign subtitle_color = settings.icon_subtitle_color | default: heading_color
+-%}
+<div
+  class="blocky-product-icons-2-icon"
+  {% if block.shopify_attributes %}
+    {{ block.shopify_attributes }}
+  {% endif %}
+  style="display: flex; flex-direction: column; gap: 0.6rem;"
+>
+  <div class="blocky-product-icons-2-icon-media" style="color: {{ icon_color }}; line-height: 1;">
+    {%- if settings.icon_image != blank -%}
+      <img
+        src="{{ settings.icon_image | image_url: width: 120 }}"
+        alt=""
+        loading="lazy"
+        width="56"
+        style="display: block; width: 56px; height: 56px; object-fit: contain;"
+      >
+    {%- elsif settings.icon_code != blank -%}
+      <span class="material-icons material-symbols-outlined" style="font-size: 2rem; color: {{ icon_color }};">{{ settings.icon_code }}</span>
+    {%- endif -%}
+  </div>
+  {%- if settings.icon_subtitle != blank -%}
+    <div class="blocky-product-icons-2-icon-subtitle" style="color: {{ subtitle_color }}; line-height: 1.35;">
+      {{ settings.icon_subtitle }}
+    </div>
+  {%- endif -%}
+  {%- if settings.icon_heading != blank -%}
+    <div class="blocky-product-icons-2-icon-heading" style="color: {{ heading_color }}; line-height: 1.35;">
+      {{ settings.icon_heading }}
+    </div>
+  {%- endif -%}
+  {%- if settings.icon_description != blank -%}
+    <div class="blocky-product-icons-2-icon-description" style="color: {{ description_color }}; line-height: 1.55;">
+      {{ settings.icon_description }}
+    </div>
+  {%- endif -%}
+</div>

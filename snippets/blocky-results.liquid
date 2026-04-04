@@ -1,0 +1,46 @@
+{%- liquid
+  assign settings = block.settings
+  assign result_text_color = settings.result_text_color | default: '#111111'
+  assign result_text_size = settings.result_text_size | default: 16
+  assign percentage_size = settings.percentage_size | default: 7
+  assign percentage_color = settings.percentage_color | default: '#111111'
+  assign non_percentage_color = settings.non_percentage_color | default: '#e9e9e9'
+  assign results_padding = settings.results_padding | default: 1
+  assign results_border_width = settings.results_border_width | default: 0.7
+-%}
+<div
+  class="blocky-results"
+  {% if block.shopify_attributes %}
+    {{ block.shopify_attributes }}
+  {% endif %}
+  style="display: flex; flex-direction: column; gap: {{ results_padding }}rem;"
+>
+  {%- for i in (1..5) -%}
+    {%- liquid
+      assign row_key = 'row_text_' | append: i
+      assign percentage_key = 'percentage_' | append: i
+      assign row_html = settings[row_key]
+      assign percentage_value = settings[percentage_key] | default: 0
+    -%}
+    {%- if row_html != blank -%}
+      <div
+        class="blocky-results-row"
+        style="padding: 0.9rem 0;{% if settings.show_results_borders %} border-bottom: min({{ results_border_width }}rem, 2px) solid {{ non_percentage_color }};{% endif %}"
+      >
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+          <div style="font-size: {{ percentage_size }}rem; line-height: 1; color: {{ percentage_color }}; font-weight: {% if settings.percentage_bold %}700{% else %}400{% endif %};">
+            {{ percentage_value }}%
+          </div>
+          <div style="flex: 1 1 14rem; color: {{ result_text_color }}; font-size: {{ result_text_size }}px; line-height: 1.55;">
+            {{ row_html }}
+          </div>
+        </div>
+        {%- if settings.show_percentage_bar -%}
+          <div style="margin-top: 0.75rem; width: 100%; height: 0.5rem; background: {{ non_percentage_color }}; border-radius: 999px; overflow: hidden;">
+            <div style="height: 100%; width: {{ percentage_value }}%; background: {{ percentage_color }};"></div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

@@ -1,0 +1,29 @@
+{%- liquid
+  assign settings = block.settings
+  assign title_html = settings.title
+  if title_html == blank
+    assign title_html = settings.heading
+  endif
+  if title_html == blank
+    assign title_html = settings.headline
+  endif
+  if title_html == blank
+    assign title_html = settings.heading_1
+  endif
+  if title_html == blank
+    assign title_html = settings.icon_heading
+  endif
+  assign title_color = settings.title_color | default: settings.heading_color | default: settings.headline_color | default: settings.icon_heading_color | default: '#111111'
+  assign title_size = settings.title_size | default: settings.heading_size | default: settings.headline_size | default: settings.icon_heading_size | default: 40
+-%}
+{%- if title_html != blank -%}
+  <div
+    class="blocky-title"
+    {% if block.shopify_attributes %}
+      {{ block.shopify_attributes }}
+    {% endif %}
+    style="color: {{ title_color }}; font-size: {{ title_size }}px; line-height: 1.15; margin: 0;"
+  >
+    {{ title_html }}
+  </div>
+{%- endif -%}

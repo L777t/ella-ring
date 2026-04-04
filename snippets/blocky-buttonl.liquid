@@ -1,0 +1,53 @@
+{%- liquid
+  assign settings = block.settings
+  assign button_label_html = settings.button_label
+  if button_label_html == blank
+    assign button_label_html = settings.label
+  endif
+  if button_label_html == blank
+    assign button_label_html = settings.button_text
+  endif
+  if button_label_html == blank
+    assign button_label_html = settings.cta_text
+  endif
+  assign button_label = button_label_html | strip_html | strip
+
+  assign button_link = settings.button_link | default: settings.link | default: settings.button_url | default: settings.url
+  assign button_style = settings.button_style | default: 'regular'
+  assign button_background_color = settings.button_background_color | default: '#111111'
+  assign button_text_color = settings.button_text_color | default: '#FFFFFF'
+  assign button_border_radius_key = settings.button_border_radius | default: 'curved'
+  assign button_border_radius = '12px'
+  if button_border_radius_key == 'flat'
+    assign button_border_radius = '0px'
+  elsif button_border_radius_key == 'round'
+    assign button_border_radius = '999px'
+  elsif button_border_radius_key == 'extra-round'
+    assign button_border_radius = '999px'
+  endif
+-%}
+{%- if button_label != blank and button_link != blank -%}
+  <a
+    href="{{ button_link }}"
+    class="blocky-button{% unless button_style == 'outline' %} blocky-button-regular{% endunless %}"
+    {% if block.shopify_attributes %}
+      {{ block.shopify_attributes }}
+    {% endif %}
+    style="
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      padding: 0.85rem 1.4rem;
+      border-radius: {{ button_border_radius }};
+      border: 1px solid {{ button_background_color }};
+      text-decoration: none;
+      line-height: 1.2;
+      background: {% if button_style == 'outline' %}transparent{% else %}{{ button_background_color }}{% endif %};
+      color: {% if button_style == 'outline' %}{{ button_background_color }}{% else %}{{ button_text_color }}{% endif %};
+    "
+  >
+    {{ button_label }}
+  </a>
+{%- endif -%}
