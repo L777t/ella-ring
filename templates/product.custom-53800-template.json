@@ -1,9 +1,9 @@
 {
   "sections": {
-    "marquee_53800": {
+    "marquee53800": {
       "type": "marquee",
       "blocks": {
-        "text_announcement_53800": {
+        "textannouncement53800": {
           "type": "text",
           "settings": {
             "text": "<p>Free shipping and easy returns on custom product orders</p>"
@@ -12,7 +12,7 @@
         }
       },
       "block_order": [
-        "text_announcement_53800"
+        "textannouncement53800"
       ],
       "settings": {
         "marquee_type": "scroll",
@@ -36,17 +36,17 @@
         "padding-block-end": 0
       }
     },
-    "section_product_tabs_53800": {
+    "sectionproducttabs53800": {
       "type": "section-product-tabs",
       "blocks": {
-        "description_53800": {
+        "description53800": {
           "type": "description",
           "settings": {
             "title": "Product details",
             "open_by_default": true
           }
         },
-        "shipping_53800": {
+        "shipping53800": {
           "type": "html",
           "settings": {
             "title": "Shipping & delivery",
@@ -56,7 +56,7 @@
             "page": ""
           }
         },
-        "returns_53800": {
+        "returns53800": {
           "type": "html",
           "settings": {
             "title": "Returns & refunds",
@@ -68,9 +68,9 @@
         }
       },
       "block_order": [
-        "description_53800",
-        "shipping_53800",
-        "returns_53800"
+        "description53800",
+        "shipping53800",
+        "returns53800"
       ],
       "settings": {
         "color_scheme": "scheme-1",
@@ -102,10 +102,10 @@
         "padding_bottom": 0
       }
     },
-    "slideshow_social_proof_53800": {
+    "slideshowsocialproof53800": {
       "type": "slideshow",
       "blocks": {
-        "slide_1_53800": {
+        "slide153800": {
           "type": "_slide",
           "name": "Slide",
           "settings": {
@@ -118,7 +118,7 @@
           },
           "blocks": {}
         },
-        "slide_2_53800": {
+        "slide253800": {
           "type": "_slide",
           "name": "Slide",
           "settings": {
@@ -131,7 +131,7 @@
           },
           "blocks": {}
         },
-        "slide_3_53800": {
+        "slide353800": {
           "type": "_slide",
           "name": "Slide",
           "settings": {
@@ -146,9 +146,9 @@
         }
       },
       "block_order": [
-        "slide_1_53800",
-        "slide_2_53800",
-        "slide_3_53800"
+        "slide153800",
+        "slide253800",
+        "slide353800"
       ],
       "settings": {
         "slideshow_type": "default",
@@ -178,7 +178,7 @@
         "padding-block-end": 24
       }
     },
-    "media_with_text_feature_53800": {
+    "mediawithtextfeature53800": {
       "type": "media-with-text",
       "settings": {
         "section_width": "page-width",
@@ -192,24 +192,24 @@
         "padding-block-end": 24
       }
     },
-    "multitab_image_before_after_53800": {
+    "multitabimagebeforeafter53800": {
       "type": "multitab-image",
       "blocks": {
-        "row_1_53800": {
+        "row153800": {
           "type": "multitab-image-row",
           "settings": {
             "heading": "Concept preview",
             "menu": ""
           }
         },
-        "row_2_53800": {
+        "row253800": {
           "type": "multitab-image-row",
           "settings": {
             "heading": "Process highlight",
             "menu": ""
           }
         },
-        "row_3_53800": {
+        "row353800": {
           "type": "multitab-image-row",
           "settings": {
             "heading": "Finished result",
@@ -218,9 +218,9 @@
         }
       },
       "block_order": [
-        "row_1_53800",
-        "row_2_53800",
-        "row_3_53800"
+        "row153800",
+        "row253800",
+        "row353800"
       ],
       "settings": {
         "section_width": "page-width",
@@ -231,7 +231,7 @@
         "padding-block-end": 24
       }
     },
-    "custom_liquid_results_53800": {
+    "customliquidresults53800": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "<div class=\"page-width\"><div style=\"display:grid;gap:16px;\"><h2>Results and review proof</h2><p>Use this section for conversion-focused metrics, ratings, and quick proof points tied to this product template.</p></div></div>",
@@ -240,7 +240,7 @@
         "padding_bottom": 24
       }
     },
-    "custom_liquid_testimonials_53800": {
+    "customliquidtestimonials53800": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "<div class=\"page-width\"><div style=\"display:grid;gap:16px;\"><h2>Customer stories</h2><p>Use this section for testimonial cards, quote snippets, or image-backed review highlights.</p></div></div>",
@@ -249,7 +249,7 @@
         "padding_bottom": 24
       }
     },
-    "custom_liquid_comparison_53800": {
+    "customliquidcomparison53800": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "<div class=\"page-width\"><div style=\"display:grid;gap:16px;\"><h2>Comparison and benefits</h2><p>Use this section for a comparison table or value grid showing why this offer is different.</p></div></div>",
@@ -258,7 +258,7 @@
         "padding_bottom": 24
       }
     },
-    "media_with_text_cta_53800": {
+    "mediawithtextcta53800": {
       "type": "media-with-text",
       "settings": {
         "section_width": "page-width",
@@ -272,7 +272,7 @@
         "padding-block-end": 36
       }
     },
-    "related_products_53800": {
+    "relatedproducts53800": {
       "type": "related-products",
       "settings": {
         "heading": "You may also like",
@@ -291,16 +291,16 @@
     }
   },
   "order": [
-    "marquee_53800",
+    "marquee53800",
     "main",
-    "section_product_tabs_53800",
-    "slideshow_social_proof_53800",
-    "media_with_text_feature_53800",
-    "multitab_image_before_after_53800",
-    "custom_liquid_results_53800",
-    "custom_liquid_testimonials_53800",
-    "custom_liquid_comparison_53800",
-    "media_with_text_cta_53800",
-    "related_products_53800"
+    "sectionproducttabs53800",
+    "slideshowsocialproof53800",
+    "mediawithtextfeature53800",
+    "multitabimagebeforeafter53800",
+    "customliquidresults53800",
+    "customliquidtestimonials53800",
+    "customliquidcomparison53800",
+    "mediawithtextcta53800",
+    "relatedproducts53800"
   ]
 }
