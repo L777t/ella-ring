@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "logo": "",
@@ -14,6 +23,15 @@
     "spacing_sections": 0,
     "spacing_grid_horizontal": 30,
     "spacing_grid_vertical": 30,
+    "show_countdown": true,
+    "countdown_time": "Dec 31, 2026 18:00:00",
+    "countdown_background_color": "#fafafa",
+    "countdown_background_gradient": "linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(223, 222, 222, 1) 100%, rgba(215, 204, 250, 1) 100%)",
+    "countdown_text_color": "#000000",
+    "countdown_border": "solid",
+    "countdown_border_width": 1,
+    "countdown_border_radius": 100,
+    "countdown_border_color": "#a9a9a9",
     "enable_multi_tab_layout_mobile": true,
     "animations_reveal_on_scroll": true,
     "animations_hover_elements": "subtle-zoom",
@@ -71,14 +89,6 @@
     "enable_compare": true,
     "quick_add_type": "text",
     "card_color_scheme": "scheme-2",
-    "show_countdown": true,
-    "countdown_time": "Dec 31, 2026 18:00:00",
-    "countdown_text_color": "#000000",
-    "countdown_background_color": "#fafafa",
-    "countdown_background_gradient": "linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(223, 222, 222, 1) 100%, rgba(215, 204, 250, 1) 100%)",
-    "countdown_border": "solid",
-    "countdown_border_width": 1,
-    "countdown_border_radius": 100,
     "show_product_marquee": true,
     "product_marquee_background_color": "#001E4A",
     "product_marquee_type": "text",
@@ -109,7 +119,6 @@
     "enable_preloading_screen": false,
     "logo_width": 160,
     "logo_width_mobile": 100,
-    "countdown_border_color": "#a9a9a9",
     "card_text_alignment": "left",
     "collection_card_style": "card",
     "collection_card_image_padding": 0,
@@ -197,6 +206,22 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "button_color": "#000000",
+          "secondary_color": "#FFFFFF",
+          "ternary_color": "#6A6A6A",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": ""
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
